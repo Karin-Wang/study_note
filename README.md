@@ -1,5 +1,5 @@
 # Study Note
 including: 
 
-- algorithm in Python
-- functions in Python
+- algorithm implementation using Python
+- usful functions/modules in Python
