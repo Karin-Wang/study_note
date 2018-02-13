@@ -1,12 +1,13 @@
-'''
+# Problem
 Given a string, find the length of the longest substring T that contains at most k distinct characters.
 
 For example, Given s = “eceba” and k = 2,
 
 T is "ece" which its length is 3.
-'''
 
 
+# Solution
+```
 class Solution(object):
     
     """
@@ -44,3 +45,4 @@ class Solution(object):
             ret = max(i - low + 1, ret)   #i-low+1， 即当前substring最右-当前最左+1， 得当前substring 的长度
             # print (ret)
         return ret
+```
