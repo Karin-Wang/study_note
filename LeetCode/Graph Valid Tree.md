@@ -11,7 +11,7 @@ Note: you can assume that no duplicate edges will appear in edges. Since all edg
 
 Using Union-Find. BFS also works actually.
 
-
+# Solution
 ```
 class Solution(object):  
     def validTree(self, n, edges):
