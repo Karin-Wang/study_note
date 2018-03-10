@@ -15,6 +15,20 @@ format -- 格式化字符串。
 返回struct_time对象。
 
 ### Exmaple
+1. 
+```
+from datetime import *
+
+time = (datetime.strptime("11:25", '%H:%M') + timedelta(minutes=8)).strftime('%H:%M')
+print(time)
+```
+**Result:**
+```
+11:33
+```
+
+
+2.
 ```
 #!/usr/bin/python
 import time
