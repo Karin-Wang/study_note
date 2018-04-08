@@ -1,5 +1,6 @@
 # Study Note
 including: 
 
-- algorithm implementation using Python
-- usful functions/modules in Python
+- Algorithm implementation using Python
+- Usful functions/modules in Python
+- My Python solution in CodeJam
