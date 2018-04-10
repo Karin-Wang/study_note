@@ -67,6 +67,8 @@ Given a list of non-negative integers representing the amount of money of each h
 ## Solution
 This problem can be break up into simpler problem to make use of sloutions in House Robber I
 
+Main idea: Break the circle at a house not being robbed
+
 Which is:
 
 - Not rob house i, then break the circle from I, use solution form House Robber I to solve the problem
