@@ -54,3 +54,44 @@ class Solution:
                 
         return now
 ```
+
+
+# House Robber II
+## Problem
+Note: This is an extension of House Robber.
+
+After robbing those houses on that street, the thief has found himself a new place for his thievery so that he will not get too much attention. This time, all houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, the security system for these houses remain the same as for those in the previous street.
+
+Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
+
+## Solution
+This problem can be break up into simpler problem to make use of sloutions in House Robber I
+
+Which is:
+
+- Not rob house i, then break the circle from I, use solution form House Robber I to solve the problem
+- Not rob house i+1,....
+
+Assume we choose to not rob house i, then we are free to choose rob i+1 or not.
+
+Note:
+```
+nums[len(nums) != 1:] 
+eg1. nums = [1,2,3,4,5]
+nums[len(nums) != 1:]  = [2,3,4,5]
+nums[:-1] = [1,2,3,4]
+eg2: nums = [1]
+nums[len(nums) != 1:]  = [1]
+```
+
+Code:
+```
+class Solution:
+    def rob(self, nums):
+        def rob_helper(nums):
+            last, now = 0, 0
+            for i in nums:
+                last, now = now, max(last+i, now)
+            return now
+        return max(rob_helper(nums[len(nums) != 1:]), rob_helper(nums[:-1]))
+```
