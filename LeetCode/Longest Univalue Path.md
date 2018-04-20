@@ -42,7 +42,7 @@ Result2:
 My initial intuition is pre-order but found it's impossible, cuz in that case we can only record the longest path either in the left
 tree or right tree, but cannot combine them together in a good way.
 
-The correct idea is to do it in DFS traverse. Similar to `Diameter of Binary Tree`. The point is to keep track of the `longest` as well as record the local longest path under
+The correct idea is to do it in DFS traverse. Similar to [Diameter of Binary Tree](https://github.com/XinyueWang94/study_note/blob/master/LeetCode/Diameter%20of%20Binary%20Tree.md). The point is to keep track of the `longest` as well as record the local longest path under
 each subroot.
 
 To record the `longest`, we use :
