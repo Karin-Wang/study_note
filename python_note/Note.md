@@ -24,6 +24,29 @@ Operator| Description | Example
 `x>>C`    | x shift to right in C steps(cut right C bits) | **1011 >> 2** = **10**
 `x<<C`    | x shift to left in C steps(add C of 0 to the right) | **1011 << 2** = **101100**
 
+- Bit Manipulation
+**Sum of 2 Inegers without using any arithmetic operators**
+```
+def Add(x, y):
+ 
+    # Iterate till there is no carry 
+    while (y != 0):
+     
+        # carry now contains common
+        # set bits of x and y
+        carry = x & y
+ 
+        # Sum of bits of x and y where at
+        # least one of the bits is not set
+        x = x ^ y
+ 
+        # Carry is shifted by one so that   
+        # adding it to x gives the required sum
+        y = carry << 1
+     
+    return x
+```
+
 - Backtracking
 ```
 class Subset: 
