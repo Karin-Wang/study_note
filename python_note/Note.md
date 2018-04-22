@@ -24,3 +24,20 @@ Operator| Description | Example
 `x>>C`    | x shift to right in C steps(cut right C bits) | **1011 >> 2** = **10**
 `x<<C`    | x shift to left in C steps(add C of 0 to the right) | **1011 << 2** = **101100**
 
+- Backtracking
+```
+class Subset: 
+    def subsets(self, S):
+        self.result = []
+        self.backtrack(0, sorted(S), [])
+        return self.result
+
+        # general idea
+    def backtrack(self, start, S, temp):
+        self.result.append(temp[:])
+        for i in range(start , len(S)):
+            temp.append(S[i])
+            self.backtrack(i + 1, S, temp)
+            temp.pop()
+```
+
