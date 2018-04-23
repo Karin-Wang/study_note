@@ -66,12 +66,49 @@ def Add(x, y):
 **Traversal**:
 
 - Pre-Order
+```
+def preOrder(root):
+    stack,res = [root],[]
+    while stack:
+        root = stack.pop()
+        if root:
+            res.append(root.val)
+            stack.append(root.right)
+            stack.append(root.left)
+    return res
+            
+```
 
 - In-Order
+```
+def inOrder(root):
+    stack, res = [],[]
+    while stack or root:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        res.append(root.val)
+        root = root.right
+    return res
+```
 
 - Post-Order
+The reverse of pre-order
+```
+def postOrder(self):
+    stack, res = [root],[]
+    while stack:
+        root = stack.pop()
+        if root:
+            res.append(root.val)
+            stack.append(root.left)
+            stack.append(root.right)
+    return res[::-1]    # reverse
+```
 
 - Level-Order
+
 
 **Some Trees**
 
