@@ -78,3 +78,59 @@ class Solution:
         return a
 ```
 
+### Sort
+
+- Insertion Sort
+
+- Merge Sort
+
+- Quick Sort
+
+- Bucket Sort
+
+- Sort only using Stack
+
+### Tree 
+
+**Traversal**:
+
+- Pre-Order
+
+- In-Order
+
+- Post-Order
+
+- Level-Order
+
+**Some Trees**
+
+- Trie
+
+- BST
+
+- Difference from Binary Heap
+
+### Graph
+
+**Traversal**
+
+- DFS
+
+- BFS
+
+**Algorithm**
+
+- Dijkstra
+
+- Topological Sort
+
+- Union Find
+
+
+### Dynamic Programming
+
+
+### BackTracking
+
+
+
