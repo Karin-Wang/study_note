@@ -1,4 +1,4 @@
-# Python Note
+# Karin's Note
 
 - sort object by attribute:
 `obj.sort(key = lambda x:x.atribute, reverse = True/False)`
