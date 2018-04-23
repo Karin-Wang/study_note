@@ -14,6 +14,8 @@ while fast and fast.next:
 mid = slow.next
 ```
 
+### Bit Manipulation
+
 - Bitwise Operators
 
 Operator| Description | Example 
@@ -45,37 +47,6 @@ def Add(x, y):
         y = carry << 1
      
     return x
-```
-
-- Backtracking
-```
-class Subset: 
-    def subsets(self, S):
-        self.result = []
-        self.backtrack(0, sorted(S), [])
-        return self.result
-
-        # general idea
-    def backtrack(self, start, S, temp):
-        self.result.append(temp[:])
-        for i in range(start , len(S)):
-            temp.append(S[i])
-            self.backtrack(i + 1, S, temp)
-            temp.pop()
-```
-
-- Fibonacci 
-```
-class Solution:
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        a,b = 1,1
-        for _ in range(n-1):
-            a,b = b,a+b
-        return a
 ```
 
 ### Sort
@@ -129,8 +100,39 @@ class Solution:
 
 ### Dynamic Programming
 
+- Fibonacci 
+```
+class Solution:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        a,b = 1,1
+        for _ in range(n-1):
+            a,b = b,a+b
+        return a
+```
+
 
 ### BackTracking
+
+- Backtracking
+```
+class Subset: 
+    def subsets(self, S):
+        self.result = []
+        self.backtrack(0, sorted(S), [])
+        return self.result
+
+        # general idea
+    def backtrack(self, start, S, temp):
+        self.result.append(temp[:])
+        for i in range(start , len(S)):
+            temp.append(S[i])
+            self.backtrack(i + 1, S, temp)
+            temp.pop()
+```
 
 
 
