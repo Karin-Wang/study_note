@@ -1,4 +1,4 @@
-# Karin's Note
+# Karin's Note ^^
 
 - sort object by attribute:
 `obj.sort(key = lambda x:x.atribute, reverse = True/False)`
@@ -96,7 +96,7 @@ def inOrder(root):
 - Post-Order
 The reverse of pre-order
 ```
-def postOrder(self):
+def postOrder(root):
     stack, res = [root],[]
     while stack:
         root = stack.pop()
@@ -108,6 +108,18 @@ def postOrder(self):
 ```
 
 - Level-Order
+```
+def level-order(root):
+    if not root: return []
+    res,level = [],[root]
+    while level:
+        res.append([node.val for node in level])
+        temp = []
+        for node in level:
+            temp += [node.left,node.right] 
+        level = [leaf for leaf in temp if leaf]
+    return res
+```
 
 
 **Some Trees**
