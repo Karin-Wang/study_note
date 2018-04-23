@@ -76,7 +76,35 @@ def Add(x, y):
 **Some Trees**
 
 - Trie
-
+```
+class Trie:
+    def __init__(self):
+        self.tree = {}
+        
+    def insert(self,word):
+        tree = self.tree
+        for char in word:
+            if char not in tree:
+                tree[char] = {}
+            tree = tree[char]
+        tree['exist'] = True
+        
+    def search(self, word):
+        tree = self.tree
+        for char in word:
+            if char not in tree:
+                return False
+            tree = tree[char]
+        return ('exist' in tree and tree['exist'] == True)
+    
+    def findPrefix(self,prefix):
+        tree = self.tree
+        for char in prefix:
+            if char not in tree:
+                return False
+            tree = tree[char]
+        return True
+```
 - BST
 
 - Difference from Binary Heap
