@@ -171,8 +171,27 @@ class Trie:
 - Dijkstra
 
 - Topological Sort
+```
+        connections = {i:[] for i in range(numCourses)}
+        indegrees = [0 for _ in range(numCourses)]
+        for p in prerequisites:
+            connections[p[1]].append(p[0])
+            indegrees[p[0]]+=1
+        zeroDegrees = [index for index, value in enumerate(indegrees) if value==0]
+        count = 0
+        while len(zeroDegrees) > 0:
+            count += 1
+            for node in connections[zeroDegrees.pop()]:
+                indegrees[node] -= 1
+                if indegrees[node] == 0:
+                    zeroDegrees.append(node)
+        return (count == numCourses)
+```
 
 - Union Find
+
+https://github.com/XinyueWang94/study_note/blob/master/python_note/Union_Find.py
+
 
 
 ### Dynamic Programming
