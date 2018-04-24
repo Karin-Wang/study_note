@@ -163,6 +163,9 @@ class Trie:
 **Traversal**
 
 - DFS
+ [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/)
+ [417. Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
+ [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)
 
 - BFS
 
