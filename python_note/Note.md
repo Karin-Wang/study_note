@@ -14,6 +14,11 @@ while fast and fast.next:
 mid = slow.next
 ```
 
+- replace and add something in original string
+```
+''.join(s.replace('|', '||') + ' | ' for s in strs)
+```
+
 ### Bit Manipulation
 
 - Bitwise Operators
@@ -60,6 +65,30 @@ def Add(x, y):
 - Bucket Sort
 
 - Sort only using Stack
+
+### Linked List
+- Reverse Linked List
+```
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        prev = None
+        while head:
+            curr = head
+            head = head.next
+            curr.next = prev
+            prev = curr
+        return prev
+```
 
 ### Tree 
 
@@ -228,7 +257,7 @@ class Subset:
         self.backtrack(0, sorted(S), [])
         return self.result
 
-        # general idea
+        # general template
     def backtrack(self, start, S, temp):
         self.result.append(temp[:])
         for i in range(start , len(S)):
