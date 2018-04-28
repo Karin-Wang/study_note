@@ -19,6 +19,12 @@ mid = slow.next
 ''.join(s.replace('|', '||') + ' | ' for s in strs)
 ```
 
+- deal with duplicate elements in rotated sorted list(part in binary search)
+```
+        while l < mid and nums[l] == nums[mid]: # tricky part DiaoDiaoDiao aaaaa
+            l += 1
+```
+
 ### Bit Manipulation
 
 - Bitwise Operators
