@@ -1,0 +1,48 @@
+# Island Perimeter
+
+## Problem
+You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn't have "lakes" (water inside that isn't connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
+
+## Solution
+
+### idea1: DFS
+
+- Similar to the question `Number of Islands`, but to calculate the number of adjacent continent, the initial value for every 
+island is 4, minus 1 if any of the 4 directions have one adjaccent continent. 
+- Note! Even the visited one should take into consideration, otherwise would fail on the case like `[[1,1],[1,1]]`. Thus if it 
+is '0' then we continue, if it is visited '#', we minus one to the local edges but not go into recursion, if it is '1' then we
+minus one and go into a new recursion from the current point.
+- But too slow, 512 ms, only beats 14.05%
+
+Code:
+```
+class Solution:
+    def islandPerimeter(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        if not grid: return 0
+        self.directions = [(-1,0),(1,0),(0,1),(0,-1)]
+        m = len(grid) #x,i
+        n = len(grid[0]) #y,j
+        self.count = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    self.dfsHelper(i,j,m,n,grid,4)
+                    return self.count
+    def dfsHelper(self,i,j,m,n,grid,local_count):
+        grid[i][j] = "#"       
+        for d in self.directions:
+            x,y = i+d[0], j+d[1]
+            if x>=m or y>=n or x<0 or y<0 or grid[x][y]==0:
+                continue
+            elif x>=m or y>=n or x<0 or y<0 or grid[x][y]=="#": #!!!!!!不用入递归但是还是要算的！！！！！！
+                local_count -= 1
+                continue
+            else:
+                local_count -= 1
+                self.dfsHelper(x,y,m,n,grid,4)
+        self.count+= local_count
+```
