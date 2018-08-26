@@ -3,6 +3,8 @@
 - sort object by attribute:
 `obj.sort(key = lambda x:x.atribute, reverse = True/False)`
 
+### Linked List 
+
 - Find middle point in a linked list(in the format of node class)
 ```
 # slow step: 1 ; fast step : 2
@@ -12,6 +14,28 @@ while fast and fast.next:
     slow = slow.next
 # mid: points to root
 mid = slow.next
+```
+
+- [Floyd's cycle detection algorithm a.k.a hare and tortoise algorithm:](https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/)
+**Basic thought:**
+
+**2 pointer, one slow, one fast**
+
+* 如果没有cycle， 则slow和fast只可能在终点相遇
+
+* 如果与cycle, 则slow和fast都在环里绕圈，slow会被fast套圈追上
+
+```
+def hasCycle(self, head):
+    try:
+        slow = head
+        fast = head.next
+        while slow is not fast:
+            slow = slow.next
+            fast = fast.next.next
+        return True
+    except:
+        return False
 ```
 
 - replace and add something in original string
