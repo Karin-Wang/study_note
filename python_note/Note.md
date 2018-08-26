@@ -21,9 +21,9 @@ mid = slow.next
 
 **2 pointer, one slow, one fast**
 
-* 如果没有cycle， 则slow和fast只可能在终点相遇
+如果没有cycle， 则slow和fast只可能在终点相遇
 
-* 如果与cycle, 则slow和fast都在环里绕圈，slow会被fast套圈追上
+如果与cycle, 则slow和fast都在环里绕圈，slow会被fast套圈追上
 
 ```
 def hasCycle(self, head):
