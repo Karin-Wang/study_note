@@ -3,6 +3,9 @@
 - sort object by attribute:
 `obj.sort(key = lambda x:x.atribute, reverse = True/False)`
 
+- sort dictionary by value in decreasing order:
+`sorted_d = sorted(d.items(), key=lambda x: x[1], reverse=True)`
+
 ### Linked List 
 
 - Find middle point in a linked list(in the format of node class)
