@@ -1,4 +1,4 @@
-# Karin's Note ^^
+# Karin's Algorithm Note ^^
 
 - sort object by attribute:
 `obj.sort(key = lambda x:x.atribute, reverse = True/False)`
@@ -234,6 +234,9 @@ class Trie:
  
 
 - BFS
+```
+
+```
 
 **Algorithm**
 
