@@ -127,7 +127,15 @@ class Solution:
 
 **Traversal**:
 
-- Pre-Order
+- Pre-Order 中左右
+
+Usage: 
+
+1. create a copy of the tree
+
+2.  get prefix expression on of an expression tree 
+
+
 ```
 def preOrder(root):
     stack,res = [root],[]
@@ -141,7 +149,10 @@ def preOrder(root):
             
 ```
 
-- In-Order
+- In-Order 左中右
+
+Usage: `non-decreasing order`
+
 ```
 def inOrder(root):
     stack, res = [],[]
@@ -155,8 +166,12 @@ def inOrder(root):
     return res
 ```
 
-- Post-Order
+- Post-Order 左右中
+
 The reverse of pre-order
+
+Usage: delete the tree
+
 ```
 def postOrder(root):
     stack, res = [root],[]
