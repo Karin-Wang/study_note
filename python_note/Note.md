@@ -317,5 +317,60 @@ class Subset:
             temp.pop()
 ```
 
+### Union Find
 
+```
+class QuickFind:
+    def __init__(self):
+        self.id = {}
+            
+    def connected(self,p,q):
+        return self.find(p) == self.find(q)
+    
+    def find(self,p):  
+        if p not in self.id:
+            self.id[p] = p
+        while p in self.id and self.id[p] != p:
+            p = self.id[p]
+        return self.id[p]
+    
+    def union(self,p,q):
+        p = self.find(p)
+        q = self.find(q)
+        self.id[p] = q
+```
 
+### Quick Selection
+
+**Kth Largest Element in an Array**
+
+```
+class Solution:
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return self.find(nums, k)
+        
+    def partition(self, start, end, nums):
+        high = start
+        while start < end:
+            if nums[start] > nums[end]:
+                nums[start], nums[high] = nums[high], nums[start]
+                high += 1
+            start += 1
+        nums[end], nums[high] = nums[high], nums[end]
+        return high
+        
+        
+    def find(self, nums, k):
+        pos = self.partition(0, len(nums)-1, nums)
+        if pos + 1 == k:
+            return nums[pos]
+        elif pos + 1 > k:
+            return self.find(nums[:pos], k)
+        else:
+            return self.find(nums[pos+1:], k - pos - 1)
+```
