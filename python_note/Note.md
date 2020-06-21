@@ -133,7 +133,9 @@ Usage:
 
 1. create a copy of the tree
 
-2.  get prefix expression on of an expression tree 
+2. get prefix expression on of an expression tree 
+
+3. DFS traversal of tree
 
 
 ```
