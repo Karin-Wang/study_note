@@ -137,6 +137,8 @@ Usage:
 
 3. DFS traversal of tree
 
+![a](https://github.com/XinyueWang94/study_note/blob/master/python_note/img/Screenshot%202020-06-21%20at%2020.45.52.png)
+
 
 ```
 def preOrder(root):
