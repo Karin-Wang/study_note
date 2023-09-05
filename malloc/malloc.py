@@ -87,26 +87,29 @@ def realloc(ptr, size):
 
 if __name__ == "__main__":
 
-    ptr1 = malloc(4080)
+    s = 256
+    ptr1 = malloc(s)
     if ptr1 is not None:
-        print("meow meow allocate 128 bytes for ptr1")
-    
-    ptr1 = realloc(ptr1, 256)
-    if ptr1 is not None:
-        print("realloc 256 bytes for ptr1")
+        print("allocate " +str(s) + " bytes for ptr1")
 
-    ptr2 = malloc(4080)
+    s = 4080    
+    ptr1 = realloc(ptr1, s)
+    if ptr1 is not None:
+        print("realloc 4080 bytes for ptr1")
+
+    ptr2 = malloc(s)
     if ptr2 is not None:
-        print("meow meow malloc 256 bytes for ptr2")
+        print("allocate " +str(s) + " bytes for ptr2")
 
-    ptr3 = malloc(4080)
+    s = 128
+    ptr3 = malloc(s)
     if ptr3 is not None:
-        print("meow meow malloc 4096 bytes ptr3")
+        print("allocate " +str(s) + " bytes for ptr3")
 
-
-    ptr4 = malloc(4080)
+    s = 4080  
+    ptr4 = malloc(s)
     if ptr3 is not None:
-        print("meow meow malloc 4096 bytes ptr4")
+        print("allocate " +str(s) + " bytes for ptr4")
 
     print("meow release")
     free(ptr1)
@@ -118,7 +121,7 @@ if __name__ == "__main__":
     ptr = malloc(128)
     if ptr is not None:
         try:
-            ctypes.memmove(ptr, b"beat kabi bear", 30)
+            ctypes.memmove(ptr, b"Meowllo world", 30)
             data = ctypes.string_at(ptr)
             print("read:", data.decode('utf-8'))  
         except Exception as e:
